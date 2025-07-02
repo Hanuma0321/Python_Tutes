@@ -1,0 +1,21 @@
+ID,State,Home.Ownership,Loan.Purpose,Monthly.Income,Amount.Requested,Loan.Length,Interest.Rate,Debt.To.Income.Ratio,FICO.Range
+1,SC,MORTGAGE,major_purchase,4787.49,41168.18,56 months,0.13,0.46,713
+2,NJ,Unencumbered,home_improvement,9232.94,15903.57,32 months,0.08,0.32,753
+3,SC,MORTGAGE,major_purchase,9956.37,25156.75,31 months,0.27,0.15,776
+4,TX,Unencumbered,debt_consolidation,7478.13,49642.11,17 months,0.2,0.39,705
+5,NY,Unencumbered,home_improvement,6648.13,13689.2,23 months,0.14,0.41,604
+6,NY,MORTGAGE,major_purchase,7306.19,19291.2,52 months,0.21,0.12,741
+7,SC,MORTGAGE,debt_consolidation,7095.58,23958.29,17 months,0.23,0.17,660
+8,TX,MORTGAGE,home_improvement,3900.71,23458.21,23 months,0.06,0.21,616
+9,SC,MORTGAGE,major_purchase,7746.05,45848.04,17 months,0.2,0.36,602
+10,TX,MORTGAGE,home_improvement,9180.73,36286.42,null,0.24,0.14,655
+11,NJ,Unencumbered,debt_consolidation,11694.51,13686.69,31 months,0.29,0.1,675
+12,NJ,Unencumbered,debt_consolidation,8598.84,8858.47,47 months,0.14,0.28,843
+13,NJ,Unencumbered,home_improvement,11074.28,9812.21,52 months,0.16,0.25,844
+14,NJ,Unencumbered,major_purchase,9713.13,37425.18,17 months,0.2,0.25,758
+15,SC,Unencumbered,debt_consolidation,10777.52,9279.85,56 months,0.24,0.42,691
+16,SC,MORTGAGE,debt_consolidation,6573.04,46228.48,32 months,0.09,0.28,710
+17,NY,MORTGAGE,home_improvement,5419.38,47559.5,56 months,0.24,0.23,748
+18,NY,MORTGAGE,major_purchase,7921.36,3849.1,47 months,0.27,0.27,672
+19,SC,MORTGAGE,debt_consolidation,10757.07,42285.88,23 months,0.23,0.41,814
+20,NY,MORTGAGE,major_purchase,8923.97,38669.13,12 months,0.06,0.33,705
