@@ -1,0 +1,10 @@
+single - car(vehicle)
+multiple - car(vehicle,tech)
+multilevel -
+    car(vhecile)
+    tech(car)
+heierarchial 
+    car(vehicle)
+    bike(vehicle)
+
+hybrid - combo of all

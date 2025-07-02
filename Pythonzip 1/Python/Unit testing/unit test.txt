@@ -1,0 +1,9 @@
+Unit testing is a crucial aspect of software development that involves testing 
+individual units or components of code to ensure their proper functioning. 
+It aims to validate that each unit, 
+    such as a function or method, works as intended and produces the expected output.
+
+test suite /;
+Test suites are the logical grouping or collection of test cases to run a single job with 
+different test scenarios. For instance, a test suite for product purchase has multiple test cases, 
+like: Test Case 1: Login. Test Case 2: Adding Products.

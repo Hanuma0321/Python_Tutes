@@ -1,0 +1,763 @@
+"C:\Users\10731349\Downloads\bquxjob_67d13e0f_18f851c0ed7.csv"
+"C:\Users\10731349\Downloads\bquxjob_53d704a5_18f953d817a.json"
+
+
+
+------------> CSV File Example
++-----------------+------------+-----------------+
+| Column          | CSV Type   | BigQuery Type   |
++=================+============+=================+
+| ADDRESSID       | STRING     | INTEGER         |
++-----------------+------------+-----------------+
+| ADDRESSLINE1    | STRING     | STRING          |
++-----------------+------------+-----------------+
+| ADDRESSLINE2    | STRING     | STRING          |
++-----------------+------------+-----------------+
+| CITY            | STRING     | STRING          |
++-----------------+------------+-----------------+
+| STATEPROVINCEID | STRING     | INTEGER         |
++-----------------+------------+-----------------+
+| POSTALCODE      | STRING     | STRING          |
++-----------------+------------+-----------------+
+| SPATIALLOCATION | STRING     | STRING          |
++-----------------+------------+-----------------+
+| PINCODE         | STRING     | N/A             |
++-----------------+------------+-----------------+
+-------------------------------------------------------------
+Columns present at Source but not at Target:
+        PINCODE
+Columns with changed data types:
+        STATEPROVINCEID: CSV STRING -> BigQuery INTEGER
+        ADDRESSID: CSV STRING -> BigQuery INTEGER
+-------------------------------------------------------------
+------------> JSON File Example
++-------------------+-------------+-----------------+
+| Column            | JSON Type   | BigQuery Type   |
++===================+=============+=================+
+| COUNTRYREGIONCODE | STRING      | N/A             |
++-------------------+-------------+-----------------+
+| NAME1             | STRING      | N/A             |
++-------------------+-------------+-----------------+
+-------------------------------------------------------------
+Columns present at Target but not at Source:
+        ADDRESSLINE2
+        ADDRESSLINE1
+        CITY
+        STATEPROVINCEID
+        ADDRESSID
+        SPATIALLOCATION
+        POSTALCODE
+Columns present at Source but not at Target:
+        NAME1
+        COUNTRYREGIONCODE
+-------------------------------------------------------------
+------------> SQLServer  Example
++-----------------+------------------+-----------------+
+| Column          | SQLSERVER Type   | BigQuery Type   |
++=================+==================+=================+
+| ADDRESSID       | INTEGER          | INTEGER         |
++-----------------+------------------+-----------------+
+| ADDRESSLINE1    | STRING           | STRING          |
++-----------------+------------------+-----------------+
+| ADDRESSLINE2    | STRING           | STRING          |
++-----------------+------------------+-----------------+
+| CITY            | STRING           | STRING          |
++-----------------+------------------+-----------------+
+| STATEPROVINCEID | INTEGER          | INTEGER         |
++-----------------+------------------+-----------------+
+| POSTALCODE      | STRING           | STRING          |
++-----------------+------------------+-----------------+
+| SPATIALLOCATION | STRING           | STRING          |
++-----------------+------------------+-----------------+
+-------------------------------------------------------------
+-------------------------------------------------------------
+
+
+updated code in different file
+===============================
+
+
+------------> CSV File Example
++-----------------+------------+-----------------+
+| Column          | CSV Type   | BigQuery Type   |
++=================+============+=================+
+| ADDRESSID       | STRING     | INTEGER         |
++-----------------+------------+-----------------+
+| ADDRESSLINE1    | STRING     | STRING          |
++-----------------+------------+-----------------+
+| ADDRESSLINE2    | STRING     | STRING          |
++-----------------+------------+-----------------+
+| CITY            | STRING     | STRING          |
++-----------------+------------+-----------------+
+| STATEPROVINCEID | STRING     | INTEGER         |
++-----------------+------------+-----------------+
+| POSTALCODE      | STRING     | STRING          |
++-----------------+------------+-----------------+
+| SPATIALLOCATION | STRING     | STRING          |
++-----------------+------------+-----------------+
+| PINCODE         | STRING     | N/A             |
++-----------------+------------+-----------------+
+-------------------------------------------------------------
+Columns present at Source but not at Target:
+        PINCODE
+Columns with changed data types:
+        ADDRESSID: CSV STRING -> BigQuery INTEGER
+        STATEPROVINCEID: CSV STRING -> BigQuery INTEGER
+-------------------------------------------------------------
+------------> JSON File Example
++-------------------+-------------+-----------------+
+| Column            | JSON Type   | BigQuery Type   |
++===================+=============+=================+
+| COUNTRYREGIONCODE | STRING      | N/A             |
++-------------------+-------------+-----------------+
+| NAME1             | STRING      | N/A             |
++-------------------+-------------+-----------------+
+-------------------------------------------------------------
+Columns present at Target but not at Source:
+        POSTALCODE
+        SPATIALLOCATION
+        CITY
+        STATEPROVINCEID
+        ADDRESSID
+        ADDRESSLINE2
+        ADDRESSLINE1
+Columns present at Source but not at Target:
+        NAME1
+        COUNTRYREGIONCODE
+-------------------------------------------------------------
+------------> SQLServer  Example
++-----------------+------------------+-----------------+
+| Column          | SQLSERVER Type   | BigQuery Type   |
++=================+==================+=================+
+| ADDRESSID       | INT              | INTEGER         |
++-----------------+------------------+-----------------+
+| ADDRESSLINE1    | NVARCHAR         | STRING          |
++-----------------+------------------+-----------------+
+| ADDRESSLINE2    | NVARCHAR         | STRING          |
++-----------------+------------------+-----------------+
+| CITY            | NVARCHAR         | STRING          |
++-----------------+------------------+-----------------+
+| STATEPROVINCEID | INT              | INTEGER         |
++-----------------+------------------+-----------------+
+| POSTALCODE      | NVARCHAR         | STRING          |
++-----------------+------------------+-----------------+
+| SPATIALLOCATION | NVARCHAR         | STRING          |
++-----------------+------------------+-----------------+
+-------------------------------------------------------------
+Columns with changed data types:
+        POSTALCODE: SQLSERVER NVARCHAR -> BigQuery STRING
+        SPATIALLOCATION: SQLSERVER NVARCHAR -> BigQuery STRING
+        CITY: SQLSERVER NVARCHAR -> BigQuery STRING
+        STATEPROVINCEID: SQLSERVER INT -> BigQuery INTEGER
+        ADDRESSID: SQLSERVER INT -> BigQuery INTEGER
+        ADDRESSLINE2: SQLSERVER NVARCHAR -> BigQuery STRING
+        ADDRESSLINE1: SQLSERVER NVARCHAR -> BigQuery STRING
+-------------------------------------------------------------
+
+
+
+
+
+
+prompt="compare the given source schema and bigquery schema. identify any differences in the schema, such as mismatched columns names, data types, or missing columns. if missing columns are there in schema. mention the missing columns from source schema and mention missing columns from bigquery schema."
+
+
+
+------------> CSV File Example
++-----------------+------------+-----------------+
+| Column          | CSV Type   | BigQuery Type   |
++=================+============+=================+
+| ADDRESSID       | STRING     | INTEGER         |
++-----------------+------------+-----------------+
+| ADDRESSLINE1    | STRING     | STRING          |
++-----------------+------------+-----------------+
+| ADDRESSLINE2    | STRING     | STRING          |
++-----------------+------------+-----------------+
+| CITY            | STRING     | STRING          |
++-----------------+------------+-----------------+
+| STATEPROVINCEID | STRING     | INTEGER         |
++-----------------+------------+-----------------+
+| POSTALCODE      | STRING     | STRING          |
++-----------------+------------+-----------------+
+| SPATIALLOCATION | STRING     | STRING          |
++-----------------+------------+-----------------+
+| PINCODE         | STRING     | N/A             |
++-----------------+------------+-----------------+
+-------------------------------------------------------------
+Columns present at Source but not at Target:
+        PINCODE
+Columns with changed data types:
+        ADDRESSID: CSV STRING -> BigQuery INTEGER
+        STATEPROVINCEID: CSV STRING -> BigQuery INTEGER
+-------------------------------------------------------------
+------------> JSON File Example
++-------------------+-------------+-----------------+
+| Column            | JSON Type   | BigQuery Type   |
++===================+=============+=================+
+| COUNTRYREGIONCODE | STRING      | N/A             |
++-------------------+-------------+-----------------+
+| NAME1             | STRING      | N/A             |
++-------------------+-------------+-----------------+
+-------------------------------------------------------------
+Columns present at Target but not at Source:
+        ADDRESSID
+        POSTALCODE
+        STATEPROVINCEID
+        ADDRESSLINE2
+        CITY
+        SPATIALLOCATION
+        ADDRESSLINE1
+Columns present at Source but not at Target:
+        NAME1
+        COUNTRYREGIONCODE
+-------------------------------------------------------------
+------------> SQLServer  Example
++-----------------+------------------+-----------------+
+| Column          | SQLSERVER Type   | BigQuery Type   |
++=================+==================+=================+
+| ADDRESSID       | INT              | INTEGER         |
++-----------------+------------------+-----------------+
+| ADDRESSLINE1    | NVARCHAR         | STRING          |
++-----------------+------------------+-----------------+
+| ADDRESSLINE2    | NVARCHAR         | STRING          |
++-----------------+------------------+-----------------+
+| CITY            | NVARCHAR         | STRING          |
++-----------------+------------------+-----------------+
+| STATEPROVINCEID | INT              | INTEGER         |
++-----------------+------------------+-----------------+
+| POSTALCODE      | NVARCHAR         | STRING          |
++-----------------+------------------+-----------------+
+| SPATIALLOCATION | NVARCHAR         | STRING          |
++-----------------+------------------+-----------------+
+-------------------------------------------------------------
+Columns with changed data types:
+-------------------------------------------------------------
+
+
+my edited code output
+=======================
+(1)
+
+------------> CSV File Example
+The differences in the schema are as follows:
+
+1. Mismatched data types:
+   - ADDRESSID: STRING in source schema, INTEGER in BigQuery schema
+   - STATEPROVINCEID: STRING in source schema, INTEGER in BigQuery schema
+
+2. Missing columns:
+   - PINCODE is missing in the BigQuery schema
+
+Here is a comparison table of the source schema and the BigQuery schema:
+
+| Column Name      | Source Schema Data Type | BigQuery Schema Data Type |
+|------------------|-------------------------|---------------------------|
+| ADDRESSID        | STRING                  | INTEGER                   |
+| ADDRESSLINE1     | STRING                  | STRING                    |
+| ADDRESSLINE2     | STRING                  | STRING                    |
+| CITY             | STRING                  | STRING                    |
+| STATEPROVINCEID  | STRING                  | INTEGER                   |
+| POSTALCODE       | STRING                  | STRING                    |
+| SPATIALLOCATION  | STRING                  | STRING                    |
+| PINCODE          | STRING                  | N/A                       |
+
+Missing columns from source schema: None
+Missing columns from BigQuery schema: PINCODE
+------------> JSON File Example
+------------> SQLServer  Example
+
+
+(2)
+
+------------> CSV File Example
+The differences in the schema are as follows:
+
+1. Mismatched data types:
+   - ADDRESSID: STRING in source schema, INTEGER in BigQuery schema
+   - STATEPROVINCEID: STRING in source schema, INTEGER in BigQuery schema
+
+2. Missing columns:
+   - PINCODE is missing in the BigQuery schema
+
+Here is a comparison table of the source schema and the BigQuery schema:
+
+| Column Name      | Source Schema Data Type | BigQuery Schema Data Type |
+|------------------|-------------------------|---------------------------|
+| ADDRESSID        | STRING                  | INTEGER                   |
+| ADDRESSLINE1     | STRING                  | STRING                    |
+| ADDRESSLINE2     | STRING                  | STRING                    |
+| CITY             | STRING                  | STRING                    |
+| STATEPROVINCEID  | STRING                  | INTEGER                   |
+| POSTALCODE       | STRING                  | STRING                    |
+| SPATIALLOCATION  | STRING                  | STRING                    |
+| PINCODE          | STRING                  | N/A                       |
+
+Missing columns from source schema: None
+Missing columns from BigQuery schema: PINCODE
+------------> JSON File Example
+To compare the given schemas, let's first list the columns and their data types for each schema:
+
+Source Schema:
+1. COUNTRYREGIONCODE - STRING
+2. NAME1 - STRING
+
+BigQuery Schema:
+1. ADDRESSID - INTEGER
+2. ADDRESSLINE1 - STRING
+3. ADDRESSLINE2 - STRING
+4. CITY - STRING
+5. STATEPROVINCEID - INTEGER
+6. POSTALCODE - STRING
+7. SPATIALLOCATION - STRING
+
+Now, let's identify the differences in the schema:
+
+1. Mismatched column names: There are no common column names between the source schema and the BigQuery schema.
+2. Data types: Since there are no common column names, we cannot compare the data types.
+3. Missing columns:
+
+   Missing columns in the source schema:
+   - ADDRESSID
+   - ADDRESSLINE1
+   - ADDRESSLINE2
+   - CITY
+   - STATEPROVINCEID
+   - POSTALCODE
+   - SPATIALLOCATION
+
+   Missing columns in the BigQuery schema:
+   - COUNTRYREGIONCODE
+   - NAME1
+
+Here is a table comparing the source schema and the BigQuery schema:
+
+| Column Name      | Source Data Type | BigQuery Data Type |
+|------------------|------------------|--------------------|
+| COUNTRYREGIONCODE| STRING           | N/A                |
+| NAME1            | STRING           | N/A                |
+| ADDRESSID        | N/A
+------------> SQLServer  Example
+
+
+(3)
+
+------------> CSV File Example
+The differences in the schema are as follows:
+
+1. Mismatched data types:
+   - ADDRESSID: STRING in source schema, INTEGER in BigQuery schema
+   - STATEPROVINCEID: STRING in source schema, INTEGER in BigQuery schema
+
+2. Missing columns:
+   - Missing from source schema: None
+   - Missing from BigQuery schema: PINCODE
+
+Here is a comparison table of the source schema and BigQuery schema:
+
+| Column Name     | Source Data Type | BigQuery Data Type |
+|-----------------|------------------|--------------------|
+| ADDRESSID       | STRING           | INTEGER            |
+| ADDRESSLINE1    | STRING           | STRING             |
+| ADDRESSLINE2    | STRING           | STRING             |
+| CITY            | STRING           | STRING             |
+| STATEPROVINCEID | STRING           | INTEGER            |
+| POSTALCODE      | STRING           | STRING             |
+| SPATIALLOCATION | STRING           | STRING             |
+| PINCODE         | STRING           | N/A                |
+The differences in the schema are as follows:
+
+1. Mismatched data types:
+   - ADDRESSID: STRING in source schema, INTEGER in BigQuery schema
+   - STATEPROVINCEID: STRING in source schema, INTEGER in BigQuery schema
+
+2. Missing columns:
+   - PINCODE is missing in the BigQuery schema
+
+Here is a comparison table of the source schema and the BigQuery schema:
+
+| Column Name      | Source Data Type | BigQuery Data Type |
+|------------------|------------------|--------------------|
+| ADDRESSID        | STRING           | INTEGER            |
+| ADDRESSLINE1     | STRING           | STRING             |
+| ADDRESSLINE2     | STRING           | STRING             |
+| CITY             | STRING           | STRING             |
+| STATEPROVINCEID  | STRING           | INTEGER            |
+| POSTALCODE       | STRING           | STRING             |
+| SPATIALLOCATION  | STRING           | STRING             |
+| PINCODE          | STRING           | N/A                |
+------------> JSON File Example
+To compare the given schemas, let's first list the columns and their data types for each schema:
+
+Source Schema:
+1. COUNTRYREGIONCODE - STRING
+2. NAME1 - STRING
+
+BigQuery Schema:
+1. ADDRESSID - INTEGER
+2. ADDRESSLINE1 - STRING
+3. ADDRESSLINE2 - STRING
+4. CITY - STRING
+5. STATEPROVINCEID - INTEGER
+6. POSTALCODE - STRING
+7. SPATIALLOCATION - STRING
+
+Now, let's identify the differences in the schema:
+
+1. Mismatched column names: There are no common column names between the source schema and the BigQuery schema.
+2. Data types: N/A (since there are no common column names)
+3. Missing columns:
+
+   Missing columns in the source schema:
+   - ADDRESSID
+   - ADDRESSLINE1
+   - ADDRESSLINE2
+   - CITY
+   - STATEPROVINCEID
+   - POSTALCODE
+   - SPATIALLOCATION
+
+   Missing columns in the BigQuery schema:
+   - COUNTRYREGIONCODE
+   - NAME1
+
+Here's a table comparing the source schema and the BigQuery schema:
+
+| Column Name      | Source Data Type | BigQuery Data Type |
+|------------------|------------------|--------------------|
+| COUNTRYREGIONCODE| STRING           | N/A                |
+| NAME1            | STRING           | N/A                |
+| ADDRESSID        | N/A              | INTEGER            |
+------------> SQLServer  Example
+There are no missing columns in both schemas. However, there are differences in the data types used in the source schema and the BigQuery schema. Here's a comparison table:
+
+| Column Name      | Source Schema Data Type | BigQuery Schema Data Type |
+|------------------|-------------------------|---------------------------|
+| ADDRESSID        | int                     | INTEGER                   |
+| ADDRESSLINE1     | nvarchar                | STRING                    |
+| ADDRESSLINE2     | nvarchar                | STRING                    |
+| CITY             | nvarchar                | STRING                    |
+| STATEPROVINCEID  | int                     | INTEGER                   |
+| POSTALCODE       | nvarchar                | STRING                    |
+| SPATIALLOCATION  | nvarchar                | STRING                    |
+
+In the source schema, the data type for ADDRESSLINE1, ADDRESSLINE2, CITY, POSTALCODE, and SPATIALLOCATION is 'nvarchar', while in the BigQuery schema, the data type for these columns is 'STRING'.
+
+
+
+final output
+=============
+------------> CSV File Example
+The differences in the schema are as follows:
+
+| Column Name      | Source Schema Data Type | BigQuery Schema Data Type |
+|------------------|-------------------------|---------------------------|
+| ADDRESSID        | STRING                  | INTEGER                   |
+| STATEPROVINCEID  | STRING                  | INTEGER                   |
+| PINCODE          | STRING                  | N/A                       |
+| SPATIALLOCATION  | STRING                  | STRING                    |
+| ADDRESSLINE1     | STRING                  | STRING                    |
+| ADDRESSLINE2     | STRING                  | STRING                    |
+| CITY             | STRING                  | STRING                    |
+| POSTALCODE       | STRING                  | STRING                    |
+
+- The data type of the `ADDRESSID` column is different: STRING in the source schema and INTEGER in the BigQuery schema.
+- The data type of the `STATEPROVINCEID` column is different: STRING in the source schema and INTEGER in the BigQuery schema.
+- The `PINCODE` column is missing in the BigQuery schema.
+| Column Name      | Source Schema Data Type | BigQuery Schema Data Type |
+|------------------|-------------------------|---------------------------|
+| ADDRESSID        | STRING                  | INTEGER                   |
+| ADDRESSLINE1     | STRING                  | STRING                    |
+| ADDRESSLINE2     | STRING                  | STRING                    |
+| CITY             | STRING                  | STRING                    |
+| STATEPROVINCEID  | STRING                  | INTEGER                   |
+| POSTALCODE       | STRING                  | STRING                    |
+| SPATIALLOCATION  | STRING                  | STRING                    |
+| PINCODE          | STRING                  | N/A                       |
+
+Differences in the schema:
+1. The data type of the 'ADDRESSID' column is STRING in the source schema and INTEGER in the BigQuery schema.  
+2. The data type of the 'STATEPROVINCEID' column is STRING in the source schema and INTEGER in the BigQuery schema.
+3. The 'PINCODE' column is present in the source schema but missing in the BigQuery schema.
+
+---------------------------------------------------------------
+------------> JSON File Example
+To compare the given schemas, let's first list the columns and their data types for each schema:
+
+Source Schema:
+1. COUNTRYREGIONCODE: STRING
+2. NAME1: STRING
+
+BigQuery Schema:
+1. ADDRESSID: INTEGER
+2. ADDRESSLINE1: STRING
+3. ADDRESSLINE2: STRING
+4. CITY: STRING
+5. STATEPROVINCEID: INTEGER
+6. POSTALCODE: STRING
+7. SPATIALLOCATION: STRING
+
+Now, let's identify the differences in the schema:
+
+Missing columns in Source Schema:
+1. ADDRESSID: INTEGER
+2. ADDRESSLINE1: STRING
+3. ADDRESSLINE2: STRING
+4. CITY: STRING
+5. STATEPROVINCEID: INTEGER
+6. POSTALCODE: STRING
+7. SPATIALLOCATION: STRING
+
+Missing columns in BigQuery Schema:
+1. COUNTRYREGIONCODE: STRING
+2. NAME1: STRING
+
+Here is a table comparing the Source Schema and BigQuery Schema:
+
+| Column Name       | Source Schema Data Type | BigQuery Schema Data Type |
+|-------------------|-------------------------|---------------------------|
+| COUNTRYREGIONCODE | STRING                  | N/A                       |
+| NAME1             | STRING                  | N/A                       |
+| ADDRESSID         | N/A                     | INTEGER                   |
+| ADDRESSLINE1      | N/A                     | STRING                    |
+| ADDRESSLINE2      | N/A                     | STRING                    |
+| CITY
+------------> SQLServer  Example
+There are no missing columns in the given schemas. However, there are differences in the data types used in the source schema and the BigQuery schema. Here's a comparison table:
+
+| Column Name      | Source Schema Data Type | BigQuery Schema Data Type |
+|------------------|-------------------------|---------------------------|
+| ADDRESSID        | int                     | INTEGER                   |
+| ADDRESSLINE1     | nvarchar                | STRING                    |
+| ADDRESSLINE2     | nvarchar                | STRING                    |
+| CITY             | nvarchar                | STRING                    |
+| STATEPROVINCEID  | int                     | INTEGER                   |
+| POSTALCODE       | nvarchar                | STRING                    |
+| SPATIALLOCATION  | nvarchar                | STRING                    |
+
+The equivalent data types in the source schema and BigQuery schema are as follows:
+
+- int (source schema) is equivalent to INTEGER (BigQuery schema)
+- nvarchar (source schema) is equivalent to STRING (BigQuery schema)
+
+Since the meaning of the data types is equivalent, there is no need to print the data types in the output.     
+
+---------------------------------------------------------------
+
+
+
+
+
+------------> CSV File Example
+The comparison of the given source schema and BigQuery schema is as follows:
+
+| Column Name      | Source Schema Data Type | BigQuery Schema Data Type |
+|------------------|-------------------------|---------------------------|
+| ADDRESSID        | STRING                  | INTEGER                   |
+| ADDRESSLINE1     | STRING                  | STRING                    |
+| ADDRESSLINE2     | STRING                  | STRING                    |
+| CITY             | STRING                  | STRING                    |
+| STATEPROVINCEID  | STRING                  | INTEGER                   |
+| POSTALCODE       | STRING                  | STRING                    |
+| SPATIALLOCATION  | STRING                  | STRING                    |
+| PINCODE          | STRING                  | N/A                       |
+
+Added Columns: NONE
+
+Removed Columns: ['PINCODE']
+
+Changed Columns: [('ADDRESSID', 'STRING', 'INTEGER'), ('STATEPROVINCEID', 'STRING', 'INTEGER')]
+The comparison of the given source schema and BigQuery schema is as follows:
+
+| Column Name      | Source Schema Data Type | BigQuery Schema Data Type |
+|------------------|-------------------------|---------------------------|
+| ADDRESSID        | STRING                  | INTEGER                   |
+| ADDRESSLINE1     | STRING                  | STRING                    |
+| ADDRESSLINE2     | STRING                  | STRING                    |
+| CITY             | STRING                  | STRING                    |
+| STATEPROVINCEID  | STRING                  | INTEGER                   |
+| POSTALCODE       | STRING                  | STRING                    |
+| SPATIALLOCATION  | STRING                  | STRING                    |
+| PINCODE          | STRING                  | N/A                       |
+
+Added Columns: NONE
+
+Removed Columns: ['PINCODE']
+
+Changed Columns: [('ADDRESSID', 'STRING', 'INTEGER'), ('STATEPROVINCEID', 'STRING', 'INTEGER')]
+
+---------------------------------------------------------------
+------------> JSON File Example
+Source Schema:
+| Column Name       | Data Type |
+|-------------------|-----------|
+| COUNTRYREGIONCODE | STRING    |
+| NAME1             | STRING    |
+
+BigQuery Schema:
+| Column Name       | Data Type |
+|-------------------|-----------|
+| ADDRESSID         | INTEGER   |
+| ADDRESSLINE1      | STRING    |
+| ADDRESSLINE2      | STRING    |
+| CITY              | STRING    |
+| STATEPROVINCEID   | INTEGER   |
+| POSTALCODE        | STRING    |
+| SPATIALLOCATION   | STRING    |
+
+Added Columns:
+- ADDRESSID
+- ADDRESSLINE1
+- ADDRESSLINE2
+- CITY
+- STATEPROVINCEID
+- POSTALCODE
+- SPATIALLOCATION
+
+Removed Columns:
+- COUNTRYREGIONCODE
+- NAME1
+
+Changed Columns: NONE
+
+---------------------------------------------------------------
+------------> SQLServer  Example
+There are no missing columns in the given schemas. However, there are differences in the data types used in the source schema and the BigQuery schema. Here's a comparison table of the two schemas:
+
+| Column Name      | Source Schema Data Type | BigQuery Schema Data Type |
+|------------------|-------------------------|---------------------------|
+| ADDRESSID        | int                     | INTEGER                   |
+| ADDRESSLINE1     | nvarchar                | STRING                    |
+| ADDRESSLINE2     | nvarchar                | STRING                    |
+| CITY             | nvarchar                | STRING                    |
+| STATEPROVINCEID  | int                     | INTEGER                   |
+| POSTALCODE       | nvarchar                | STRING                    |
+| SPATIALLOCATION  | nvarchar                | STRING                    |
+
+The data types in the source schema and the BigQuery schema have equivalent meanings, so there is no need to print them in the output.
+
+Added columns: NONE
+Removed columns: NONE
+Changed columns: NONE
+
+---------------------------------------------------------------
+
+
+
+
+
+
+FINAL OUTPUT
+============
+
+
+------------> CSV File Example
+Column Name      | Source Datatype | Target Datatype
+-----------------|-----------------|----------------
+ADDRESSID        | STRING          | INTEGER
+ADDRESSLINE1     | STRING          | STRING
+ADDRESSLINE2     | STRING          | STRING
+CITY             | STRING          | STRING
+STATEPROVINCEID  | STRING          | INTEGER
+POSTALCODE       | STRING          | STRING
+SPATIALLOCATION  | STRING          | STRING
+PINCODE          | STRING          | N/A
+
+variables output
+
+Added Columns: []
+Removed Columns: ['PINCODE']
+Changed Columns: [['ADDRESSID', 'STRING', 'INTEGER'], ['STATEPROVINCEID', 'STRING', 'INTEGER']]
+Column Name      | Source Datatype | Target Datatype
+-----------------|-----------------|----------------
+ADDRESSID        | STRING          | INTEGER
+ADDRESSLINE1     | STRING          | STRING
+ADDRESSLINE2     | STRING          | STRING
+CITY             | STRING          | STRING
+STATEPROVINCEID  | STRING          | INTEGER
+POSTALCODE       | STRING          | STRING
+SPATIALLOCATION  | STRING          | STRING
+PINCODE          | STRING          | N/A
+
+variables output
+
+Added Columns: []
+Removed Columns: ['PINCODE']
+Changed Columns: [['ADDRESSID', 'STRING', 'INTEGER'], ['STATEPROVINCEID', 'STRING', 'INTEGER']]
+
+---------------------------------------------------------------
+------------> JSON File Example
+Column Name        | Source Datatype | Target Datatype
+-------------------|-----------------|----------------
+COUNTRYREGIONCODE  | STRING          | N/A
+NAME1              | STRING          | N/A
+ADDRESSID          | N/A             | INTEGER
+ADDRESSLINE1       | N/A             | STRING
+ADDRESSLINE2       | N/A             | STRING
+CITY               | N/A             | STRING
+STATEPROVINCEID    | N/A             | INTEGER
+POSTALCODE         | N/A             | STRING
+SPATIALLOCATION    | N/A             | STRING
+
+variables output
+
+Added Columns: ['ADDRESSID', 'ADDRESSLINE1', 'ADDRESSLINE2', 'CITY', 'STATEPROVINCEID', 'POSTALCODE', 'SPATIALLOCATION']
+Removed Columns: ['COUNTRYREGIONCODE', 'NAME1']
+Changed Columns: []
+
+---------------------------------------------------------------
+------------> SQLServer  Example
+Column Name       | Source Datatype | Target Datatype
+------------------|-----------------|----------------
+ADDRESSID         | int             | INTEGER
+ADDRESSLINE1      | nvarchar        | STRING
+ADDRESSLINE2      | nvarchar        | STRING
+CITY              | nvarchar        | STRING
+STATEPROVINCEID   | int             | INTEGER
+POSTALCODE        | nvarchar        | STRING
+SPATIALLOCATION   | nvarchar        | STRING
+
+variables output
+
+Added Columns: []
+Removed Columns: []
+Changed Columns: []
+
+---------------------------------------------------------------
+
+
+
+------------> CSV File Example
+
+variables output
+
+Added Columns: ['PINCODE']
+Removed Columns: []
+Changed Columns: [['ADDRESSID', 'STRING', 'INTEGER'], ['STATEPROVINCEID', 'STRING', 'INTEGER']]
+
+---------------------------------------------------------------
+------------> JSON File Example
+
+variables output
+
+Added Columns: ['ADDRESSID', 'ADDRESSLINE1', 'ADDRESSLINE2', 'CITY', 'STATEPROVINCEID', 'POSTALCODE', 'SPATIALLOCATION']       
+Removed Columns: ['COUNTRYREGIONCODE', 'NAME1']
+Changed Columns: []
+
+---------------------------------------------------------------
+------------> SQLServer  Example
+
+variables output
+
+Added Columns: []
+Removed Columns: []
+Changed Columns: []
+
+---------------------------------------------------------------
+
+variables output
+
+Added Columns: ['CURRENCYCODE', 'NAME1']
+Removed Columns: ['ADDRESSID', 'ADDRESSLINE1', 'ADDRESSLINE2', 'CITY', 'STATEPROVINCEID', 'POSTALCODE', 'SPATIALLOCATION']     
+Changed Columns: []
+
+---------------------------------------------------------------

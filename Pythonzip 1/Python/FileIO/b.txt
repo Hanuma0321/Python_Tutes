@@ -1,0 +1,109 @@
+
+This code seems to be defining a function called check_schema_drift which aims to compare the schema of a source database table with a BigQuery table. It handles various source database types (Snowflake, SQLServer, Oracle, CSV, JSON) and attempts to connect to the source database, retrieve its schema, and compare it with the BigQuery schema.
+
+Here is a prompt that captures the essence of the code and its intended functionality:
+
+Prompt:
+
+"I have a function called check_schema_drift that takes information about a source database table and a corresponding BigQuery table as input. It connects to the source database based on its type (Snowflake, SQLServer, Oracle, CSV, or JSON), retrieves the schema of the source table, and then compares it to the schema of the BigQuery table.
+
+The goal is to identify any differences in the schema, such as mismatched column names, data types, or missing columns.
+
+My questions are:
+
+What specific information do you need about the source database table, the BigQuery table, and the database connection details to make the function work correctly?
+How does the function handle the case where the BigQuery table might not exist yet?
+What kind of output does the function provide to indicate schema drift?
+Are there any specific limitations or edge cases to be aware of?
+Could you provide an example of how to call this function with appropriate arguments?"
+
+
+
+
+import re
+
+def parse_schema_output(text):
+  """Parses the schema comparison output and returns added, removed, and changed columns."""
+
+  added_columns = []
+  removed_columns = []
+  changed_columns = []
+
+  # Extract the lists of added, removed, and changed columns
+  for section in re.findall(r'Added Columns:\s*([^ ]+)', text, re.DOTALL):
+    added_columns = [col.strip() for col in section.split(',') if col.strip()]
+  for section in re.findall(r'Removed Columns:\s*([^ ]+)', text, re.DOTALL):
+    removed_columns = [col.strip() for col in section.split('- ') if col.strip()]
+  for section in re.findall(r'Changed Columns:\s*([^ ]+)', text, re.DOTALL):
+    changed_columns = [tuple(col.strip() for col in item.split(' -> ')) for item in section.split(', ') if item.strip()]
+
+  return added_columns, removed_columns, changed_columns
+
+# Example usage:
+text = """
+------------> CSV File Example
+The comparison of the given source schema and BigQuery schema is as follows:
+
+| Column Name   | Source Schema Data Type | BigQuery Schema Data Type |
+|------------------|-------------------------|---------------------------|
+| ADDRESSID    | STRING         | INTEGER          |
+| ADDRESSLINE1   | STRING         | STRING          |
+| ADDRESSLINE2   | STRING         | STRING          |
+| CITY       | STRING         | STRING          |
+| STATEPROVINCEID | STRING         | INTEGER          |
+| POSTALCODE    | STRING         | STRING          |
+| SPATIALLOCATION | STRING         | STRING          |
+| PINCODE     | STRING         | N/A            |
+
+Added Columns: NONE
+
+Removed Columns: ['PINCODE']
+
+Changed Columns: [('ADDRESSID', 'STRING', 'INTEGER'), ('STATEPROVINCEID', 'STRING', 'INTEGER')]
+Source Schema:
+| Column Name   | Data Type |
+|------------------|-----------|
+| ADDRESSID    | STRING  |
+| ADDRESSLINE1   | STRING  |
+| ADDRESSLINE2   | STRING  |
+| CITY       | STRING  |
+| STATEPROVINCEID | STRING  |
+| POSTALCODE    | STRING  |
+| SPATIALLOCATION | STRING  |
+| PINCODE     | STRING  |
+
+BigQuery Schema:
+| Column Name   | Data Type |
+|------------------|-----------|
+| ADDRESSID    | INTEGER  |
+| ADDRESSLINE1   | STRING  |
+| ADDRESSLINE2   | STRING  |
+| CITY       | STRING  |
+| STATEPROVINCEID | INTEGER  |
+| POSTALCODE    | STRING  |
+| SPATIALLOCATION | STRING  |
+
+Differences:
+
+Added Columns: NONE
+
+Removed Columns:
+- PINCODE
+
+Changed Columns:
+- ADDRESSID: STRING -> INTEGER
+- STATEPROVINCEID: STRING -> INTEGER
+
+---------------------------------------------------------------
+------------> JSON File Example
+------------> SQLServer Example
+"""
+
+added_cols, removed_cols, changed_cols = parse_schema_output(text)
+
+print(f"Added Columns: {added_cols}")
+print(f"Removed Columns: {removed_cols}")
+print(f"Changed Columns: {changed_cols}")
+
+
+
